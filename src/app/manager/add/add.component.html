@@ -1,0 +1,17 @@
+<p>add works!</p>
+
+<form [formGroup]="managerForm" (ngSubmit)="addManager()">
+    <div>
+      <label for="firstName">Firstname:</label>
+      <input id="firstName" formControlName="firstName">
+    </div>
+    <div>
+      <label for="lastName">Lastname:</label>
+      <input id="lastName" formControlName="lastName">
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input id="age" formControlName="age">
+      </div>
+    <button type="submit" [disabled]="managerForm.invalid">Add Manager</button>
+</form>

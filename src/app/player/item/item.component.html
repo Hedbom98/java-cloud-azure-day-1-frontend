@@ -1,0 +1,11 @@
+<ng-template [ngIf]="player">
+    <div>
+      <span>ID: {{ player.id }} </span>
+      <span>Firstname: {{ player.firstName }} </span>
+      <span>Lastname: {{ player.lastName }} </span>
+      <span>Age: {{ player.age }} </span>
+      <span>Parent Club: {{ player.parentClub }} </span>
+      <span>Current Club: {{ player.team.name }} </span>
+      <span><a routerLink="view/{{ player.id }}"> View Player</a></span>
+    </div>
+  </ng-template>

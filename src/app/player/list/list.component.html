@@ -1,0 +1,7 @@
+<p>Player List Works!</p>
+
+<ng-container *ngFor="let player of players | async">
+  <app-player-item [player]="player"> </app-player-item>
+</ng-container>
+
+<app-add></app-add>

@@ -1,0 +1,22 @@
+<p>add works!</p>
+
+<form [formGroup]="teamForm" (ngSubmit)="addTeam()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name">
+    </div>
+    <div>
+      <label for="founded">Founded:</label>
+      <input id="founded" formControlName="founded">
+    </div>
+    <div>
+        <label for="manager">Manager ID:</label>
+        <input id="manager" formControlName="manager">
+      </div>
+      <div>
+        <label for="league">League ID:</label>
+        <input id="league" formControlName="league">
+      </div>
+    
+    <button type="submit" [disabled]="teamForm.invalid">Add Team</button>
+</form>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="player === null; else elseBlock">
+    <div>
+      <p><strong>Player not available</strong></p>
+    </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <div>
+      <h1>Firstname: {{ player }} {{ player?.lastName }}</h1>
+      <p>{{ player.age }} {{ player.parentClub }} {{ player.team }}</p>
+      <button routerLink="/players/edit/{{ player.id }}">Edit Player</button>
+    </div>
+  </ng-template>

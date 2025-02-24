@@ -1,0 +1,17 @@
+<ng-template [ngIf]="team">
+  <div class="teamItem">
+    <span>ID: {{ team.id }} </span>
+    <span>Name: {{ team.name }} </span>
+    <span>Founded: {{ team.founded }} </span>
+
+    <span>Players:
+      <ng-container *ngFor="let player of team.players">
+        <app-player-item [player]="player"> </app-player-item>
+      </ng-container>
+    </span>
+    <span
+      >Manager: {{ team.manager.firstName }} {{ team.manager.lastName }}
+    </span>
+    <span>League: {{ team.league.name }} </span>
+  </div>
+</ng-template>
