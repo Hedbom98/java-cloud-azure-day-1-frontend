@@ -28,7 +28,7 @@ export class AddPlayerComponent {
 
   async addPlayer() {
     await this.playerService.addPlayer(this.playerForm.value);
-    this.router.navigate(['players']);
+    this.router.navigate(['/']);
   }
 
   

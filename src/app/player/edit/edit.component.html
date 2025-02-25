@@ -1,1 +1,26 @@
-<p>edit works!</p>
+
+
+<form [formGroup]="updatePlayerForm" (ngSubmit)="updatePlayer()">
+    <div>
+      <label for="firstName">Firstname:</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+    </div>
+    <div>
+      <label for="lastName">Lastname:</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input id="age" type="number" formControlName="age" />
+    </div>
+    <div>
+      <label for="parentClub">Parent Club:</label>
+      <input id="parentClub" type="text" formControlName="parentClub" />
+    </div>
+    <div>
+      <label for="team">Current Team:</label>
+      <input id="team" type="text" formControlName="team" />
+    </div>
+  
+    <button type="submit" [disabled]="updatePlayerForm.invalid">Update Player</button>
+  </form>

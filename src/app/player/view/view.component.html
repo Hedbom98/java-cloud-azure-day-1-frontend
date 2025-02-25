@@ -5,8 +5,11 @@
   </ng-container>
   <ng-template #elseBlock>
     <div>
-      <h1>Firstname: {{ player }} {{ player?.lastName }}</h1>
-      <p>{{ player.age }} {{ player.parentClub }} {{ player.team }}</p>
+      <h3>Name: {{ player.firstName }} {{ player.lastName }}</h3>
+      <p>Age: {{ player.age }} </p>
+      <p>Parent Club: {{ player.parentClub }} </p>
+      <p>Current Club: {{ player.team.name }}</p>
       <button routerLink="/players/edit/{{ player.id }}">Edit Player</button>
+      <button (click)="deletePlayer()">Delete Player</button>
     </div>
   </ng-template>

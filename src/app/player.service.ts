@@ -15,9 +15,6 @@ export class PlayerService {
       get players() : Promise<Player[]>{
         
         // @ts-ignore
-        //console.log(this.data.__zone_symbol__value.data);
-        console.log(firstValueFrom(this.http.get(`${environment.apiUrl}/players`)).then(players => players.data));
-        // @ts-ignore
         return firstValueFrom(this.http.get(`${environment.apiUrl}/players`)).then(players => players.data);
       }
     
@@ -32,7 +29,6 @@ export class PlayerService {
         // @ts-ignore
         return player;
       }
-
 
 
 
@@ -52,18 +48,24 @@ export class PlayerService {
 
       
 
-
-      async updatePlayer(updatedPlayer: Player): Promise<Player> {
+      async updatePlayer(updatedPlayer: Player, id: Number): Promise<Player> {
         // TODO: replace with a PUT request
     
-        const player = await firstValueFrom(this.http.put(`${environment.apiUrl}/players/${updatedPlayer.id}/${updatedPlayer.team}`,{
-          id: updatedPlayer.id,
+        const player = await firstValueFrom(this.http.put(`${environment.apiUrl}/players/${id}/${updatedPlayer.team}`,{
           firstName: updatedPlayer.firstName,
           lastName: updatedPlayer.lastName,
           age: updatedPlayer.age,
           parentClub: updatedPlayer.parentClub
+          
         }));
         // @ts-ignore
         return player;
+      }
+
+
+
+
+      async deletePlayer(id: Number) {
+        await firstValueFrom(this.http.delete(`${environment.apiUrl}/players/${id}`))
       }
 }

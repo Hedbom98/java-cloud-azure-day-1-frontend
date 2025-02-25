@@ -27,6 +27,6 @@ export class AddLeagueComponent {
 
   async addLeague() {
     await this.leagueService.addLeague(this.leagueForm.value);
-    this.router.navigate(['leagues']);
+    this.router.navigate(['/']);
   }
 }

@@ -25,6 +25,6 @@ export class AddManagerComponent {
 
   async addManager() {
     await this.managerService.addManager(this.managerForm.value);
-    this.router.navigate(['managers']);
+    this.router.navigate(['/']);
   }
 }

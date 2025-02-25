@@ -28,6 +28,6 @@ export class AddTeamComponent {
 
   async addTeam() {
     await this.teamService.addTeam(this.teamForm.value);
-    this.router.navigate(['team']);
+    this.router.navigate(['/']);
   }
 }
